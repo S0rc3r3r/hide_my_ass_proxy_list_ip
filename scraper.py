@@ -167,7 +167,7 @@ def run_spider(spider, settings):
     from scrapy.settings import CrawlerSettings
       
     def catch_item(sender, item, **kwargs):
-        #log.msg("Got:" + str(item))
+        log.msg("Got:" + str(item))
         pass
        
     dispatcher.connect(catch_item, signal=signals.item_passed)
@@ -181,7 +181,7 @@ def run_spider(spider, settings):
     crawler.configure()
     crawler.crawl(spider)
 
-    #log.start(loglevel='DEBUG')
+    log.start(loglevel='DEBUG')
 
     crawler.start()
 
